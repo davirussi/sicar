@@ -1,8 +1,6 @@
 import geopandas as gpd
 from pathlib import Path
 
-# CArregar o shapefile
-
 # Carregar o shapefile
 gdf = gpd.read_file('palmeira/municipio_palmeira.shp')
 
