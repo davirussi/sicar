@@ -31,7 +31,7 @@ for index, row in gdf.iterrows():
     municipio = row['municipio'] #municipio
     
 
-    # Filter the GeoDataFrame to get only the current row and save it
+    # Filtrar GeoDataFrame para pegar cada linha e salvar num novo shapefile
     if municipio in cidades:
         single_item_gdf = gdf[gdf['cod_imovel'] == cod_imovel]
         output_filename = f"output/{municipio}/{cod_imovel}.shp"
