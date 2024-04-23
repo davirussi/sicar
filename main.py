@@ -27,6 +27,8 @@ for cidade in cidades:
 # Iterate over each row and save individual shapefiles
 for index, row in gdf.iterrows():
     # Extract the 'cod_imovel' property
+    print (index)
+    print (row)
     cod_imovel = row['cod_imovel']
     municipio = row['municipio'] #municipio
     
