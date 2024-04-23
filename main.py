@@ -1,5 +1,10 @@
 import geopandas as gpd
 from pathlib import Path
+import fiona
+
+#ativar drive kml
+fiona.supported_drivers['KML'] = 'rw'
+
 
 # Carregar o shapefile
 gdf = gpd.read_file('palmeira/municipio_palmeira.shp')
@@ -31,3 +36,9 @@ for index, row in gdf.iterrows():
         single_item_gdf = gdf[gdf['cod_imovel'] == cod_imovel]
         output_filename = f"output/{municipio}/{cod_imovel}.shp"
         single_item_gdf.to_file(output_filename)
+        
+    # Filtrar GeoDataFrame para pegar cada linha e salvar num novo kml
+    if municipio in cidades:
+        single_item_gdf = gdf[gdf['cod_imovel'] == cod_imovel]
+        output_filename = f"output/{municipio}/{cod_imovel}.kml"
+        single_item_gdf.to_file(output_filename, driver='KML')
