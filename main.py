@@ -27,6 +27,7 @@ for index, row in gdf.iterrows():
     
 
     # Filter the GeoDataFrame to get only the current row and save it
-    single_item_gdf = gdf[gdf['cod_imovel'] == cod_imovel]
-    output_filename = f"output/{municipio}/{cod_imovel}.shp"
-    single_item_gdf.to_file(output_filename)
+    if municipio in cidades:
+        single_item_gdf = gdf[gdf['cod_imovel'] == cod_imovel]
+        output_filename = f"output/{municipio}/{cod_imovel}.shp"
+        single_item_gdf.to_file(output_filename)
