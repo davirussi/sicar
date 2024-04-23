@@ -14,6 +14,8 @@ gdf = gpd.read_file('palmeira/municipio_palmeira.shp')
 for index, row in gdf.iterrows():
     # Extract the 'cod_imovel' property
     cod_imovel = row['cod_imovel']
+    municipio = row['municipio'] #municipio
+    
 
     # Filter the GeoDataFrame to get only the current row and save it
     single_item_gdf = gdf[gdf['cod_imovel'] == cod_imovel]
