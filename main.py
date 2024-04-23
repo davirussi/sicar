@@ -8,6 +8,7 @@ fiona.supported_drivers['KML'] = 'rw'
 
 # Carregar o shapefile
 gdf = gpd.read_file('palmeira/municipio_palmeira.shp')
+#gdf = gpd.read_file('area/AREA_CONSOLIDADA_RS.shp')
 
 #formato utilizado nos dados do sicar
 
